@@ -21,6 +21,20 @@ var confirmLowercase;
 var confirmNumber;
 var confirmSpecialCharacter;
 
+// Create function to generate password
+
+function generatePassword() {
+    alert("Your password should contain between 8 and 128 characters.");
+    confirmLength = (prompt("How many characters would you like in your unique password?"));
+
+    //Create a while LOOP to make sure the answer is within the criteria
+    while(confirmLength <= 7 || confirmLength >= 128) {
+        alert("Your password length must be between 8 and 128 characters. Please enter a number within the given criteria.");
+        confirmLength = (prompt("How many characters would you like in your unique password?"));
+    }
+
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
