@@ -14,6 +14,13 @@ console.log(lowercase);
 console.log(number);
 console.log(specialCharacter);
 
+// Declare variables to be used for user prompts
+var confirmLength = "";
+var confirmUppercase;
+var confirmLowercase;
+var confirmNumber;
+var confirmSpecialCharacter;
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
