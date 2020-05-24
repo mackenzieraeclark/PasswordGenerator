@@ -33,6 +33,21 @@ function generatePassword() {
         confirmLength = (prompt("How many characters would you like in your unique password?"));
     }
 
+    // Prompt user for specific criteria
+    confirmUppercase = confirm("Click OK to include uppercase characters.");
+    confirmLowercase = confirm("Click OK to include lowercase characters.");
+    confirmNumber = confirm("Click OK to include numbers.");
+    confirmSpecialCharacter = confirm("Click OK to include special characters.");
+    
+    // Create a while LOOP to make sure the user has confirmed at least one parameter
+    while(confirmUppercase === false && confirmLowercase === false && confirmNumber === false && confirmSpecialCharacter === false) {
+        alert("Please confirm at least one of these criteria in order increase your password strength.");
+        confirmUppercase = confirm("Click OK to include uppercase characters.");
+        confirmLowercase = confirm("Click OK to include lowercase characters.");
+        confirmNumber = confirm("Click OK to include numbers.");
+        confirmSpecialCharacter = confirm("Click OK to include special characters.");
+    }
+
 }
 
 // Write password to the #password input
