@@ -8,6 +8,12 @@ var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 var number = ["0","1","2","3","4","5","6","7","8","9"];
 var specialCharacter = ["~", "!", "@", "#", "$", "%", "&", "*", "?"];
 
+//confirming the arrays in the console
+console.log(uppercase);
+console.log(lowercase);
+console.log(number);
+console.log(specialCharacter);
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
