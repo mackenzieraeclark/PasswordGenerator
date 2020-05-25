@@ -9,10 +9,10 @@ var number = ["0","1","2","3","4","5","6","7","8","9"];
 var specialCharacter = ["~", "!", "@", "#", "$", "%", "&", "*", "?"];
 
 //confirming the arrays in the console
-console.log(uppercase);
-console.log(lowercase);
-console.log(number);
-console.log(specialCharacter);
+// console.log(uppercase);
+// console.log(lowercase);
+// console.log(number);
+// console.log(specialCharacter);
 
 // Declare variables to be used for user prompts
 var confirmLength = 0;
@@ -48,40 +48,36 @@ function generatePassword() {
         confirmSpecialCharacter = confirm("Click OK to include special characters.");
     }
 
-    // Declare variable to hold characters for user criteria based password
-    var passwordCharacters = " ";
+     // Declare variable to hold characters for user criteria based password
+    var passwordCharacters = [];
 
     // create IF statements to call arrays (BOOLEAN)
     if (confirmUppercase === true){
-        passwordCharacters += uppercase;
+        passwordCharacters = passwordCharacters.concat(uppercase);
         // console.log(passwordCharacters);
     }
     if (confirmLowercase === true){
-        passwordCharacters += lowercase;
+        passwordCharacters = passwordCharacters.concat(lowercase);
         // console.log(passwordCharacters);
     }
     if (confirmNumber === true){
-        passwordCharacters += number;
+        passwordCharacters = passwordCharacters.concat(number);
         // console.log(passwordCharacters);
     }
     if (confirmSpecialCharacter === true){
-        passwordCharacters += specialCharacter;
+        passwordCharacters = passwordCharacters.concat(specialCharacter);
         // console.log(passwordCharacters);
     }
 
-    // Declare variable to hold password
-    var passwordString = " ";
+    // Declare variable for string
+    var randomPassword = "";
 
-    // Create FOR loop to get user specified length
-    for (i=0; i < confirmLength; i++) {
-       passwordString = passwordCharacters.toString();
-    //    console.log(passwordString);
+    // FOR LOOP to make random password at user specific length
+    for (var i=0; i < confirmLength; i++) {
+        randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+    }
+    return randomPassword;
 
-       var x = Math.floor(Math.random() * passwordString.length);
-       var y = passwordString.charCodeAt(x);
-       password += y;
-
-    } return password;
 }
 
 // Write password to the #password input
