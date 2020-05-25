@@ -15,7 +15,7 @@ console.log(number);
 console.log(specialCharacter);
 
 // Declare variables to be used for user prompts
-var confirmLength = "";
+var confirmLength = 0;
 var confirmUppercase;
 var confirmLowercase;
 var confirmNumber;
@@ -48,6 +48,40 @@ function generatePassword() {
         confirmSpecialCharacter = confirm("Click OK to include special characters.");
     }
 
+    // Declare variable to hold characters for user criteria based password
+    var passwordCharacters = " ";
+
+    // create IF statements to call arrays (BOOLEAN)
+    if (confirmUppercase === true){
+        passwordCharacters += uppercase;
+        // console.log(passwordCharacters);
+    }
+    if (confirmLowercase === true){
+        passwordCharacters += lowercase;
+        // console.log(passwordCharacters);
+    }
+    if (confirmNumber === true){
+        passwordCharacters += number;
+        // console.log(passwordCharacters);
+    }
+    if (confirmSpecialCharacter === true){
+        passwordCharacters += specialCharacter;
+        // console.log(passwordCharacters);
+    }
+
+    // Declare variable to hold password
+    var passwordString = " ";
+
+    // Create FOR loop to get user specified length
+    for (i=0; i < confirmLength; i++) {
+       passwordString = passwordCharacters.toString();
+    //    console.log(passwordString);
+
+       var x = Math.floor(Math.random() * passwordString.length);
+       var y = passwordString.charCodeAt(x);
+       password += y;
+
+    } return password;
 }
 
 // Write password to the #password input
